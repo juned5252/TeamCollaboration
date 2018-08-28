@@ -1,7 +1,5 @@
 public class Calculator {
-
-
-    
+   static OnOFF onoff=new OnOFF();
 
     public static int add(int x, int y){
         return x+y;
@@ -50,6 +48,19 @@ public class Calculator {
         }
     }
 
+    public class OnOFF{}
+        String push=null;
+
+   void powerOn(){
+       if(push==0)
+       System.out.println("Calculator is On and usable");
+        if(push!=0) System.out.println("Error message is played  :push right button);
+    }
+    void powerOff(){
+        if(push==1) System.out.println("Calculator is Off and displays nothing");
+        if(push!=1) System.out.println("Error message is played  :push right button);
+
+    }
 
 
 
