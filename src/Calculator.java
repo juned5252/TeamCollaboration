@@ -1,5 +1,5 @@
 public class Calculator {
-   static OnOFF onoff=new OnOFF();
+  ;
 
     public static int add(int x, int y){
         return x+y;
@@ -46,21 +46,28 @@ public class Calculator {
         } else {
             return false;
         }
-    }
 
-    public class OnOFF{}
-        String push=null;
+   class OnOFF{
+       int push;
 
-   void powerOn(){
-       if(push==0)
-       System.out.println("Calculator is On and usable");
-        if(push!=0) System.out.println("Error message is played  :push right button);
-    }
-    void powerOff(){
+    //known error
+    //how do we handle it
+
+   int powerOn(int push){
+       this.push=push;
+        if(push==0);
+        System.out.println("Calculator is On and usable");
+        if(push!=0) System.out.println("Error message is played  :push right button");
+        return push;
+        }
+        int powerOff(int push){
+            this.push=push;
         if(push==1) System.out.println("Calculator is Off and displays nothing");
-        if(push!=1) System.out.println("Error message is played  :push right button);
-
+        if(push!=1) System.out.println("Error message is played  :push right button");
+        return push;
+        }
     }
+}
 
 
 
