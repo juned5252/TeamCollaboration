@@ -13,6 +13,8 @@ public class Calculator {
         return x / y;
     }
 
+    public static int multiple (int x, int y){ return x * y;}
+
     public static double div(int x, double y){
         return x/y;
     }
