@@ -13,6 +13,8 @@ public class Calculator {
         return x / y;
     }
 
+    public static int multiple (int x, int y){ return x * y;}
+
     public static double div(int x, double y){
         return x/y;
     }
@@ -45,10 +47,14 @@ public class Calculator {
             return isPalindrome(str.substring(1, str.length() - 1));
         } else {
             return false;
-        }
+       
     }
 
    private class OnOFF{
+=======
+//hello world
+   class OnOFF{
+
        int push;
 
     //known error
