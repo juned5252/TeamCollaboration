@@ -46,8 +46,9 @@ public class Calculator {
         } else {
             return false;
         }
+    }
 
-   class OnOFF{
+   private class OnOFF{
        int push;
 
     //known error
@@ -71,4 +72,4 @@ public class Calculator {
 
 
 
-}
+
