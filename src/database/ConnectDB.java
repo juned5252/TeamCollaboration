@@ -169,10 +169,11 @@ public class ConnectDB {
     }
 
     public static String insertToMongoDB(User user){
-        String profile = user.getName();
+        String profile = user.getStName();
         MongoDatabase mongoDatabase = connectToMongoDB();
         MongoCollection<Document> collection = mongoDatabase.getCollection("profile");
-        Document document = new Document().append("name",user.getName()).append("id", user.getId());
+        Document document = new Document().append("stName",user.getStName()).append("stID", user.getStID()).
+                append("stDOB",user.getStDOB());
         collection.insertOne(document);
         return profile + " has been registered";
     }
@@ -187,17 +188,13 @@ public class ConnectDB {
         for(Document doc:iterable){
             String id = "";
             int idInt = 0;
-            String name = (String)doc.get("name");
-            user.setName(name);
-            try {
-                id = (String) doc.get("id");
-                int convertId = Integer.parseInt(id);
-                user.setId(convertId);
-            }catch(Exception ex){
-                idInt = (int) doc.get("id");
-                user.setId(idInt);
-            }
-            user = new User(user.getName(),user.getId());
+            String stName = (String)doc.get("stName");
+            user.setStName(stName);
+            String stID = (String)doc.get("stID");
+            user.setStID(stID);
+            String stDOB = (String)doc.get("stDOB");
+            user.setStID(stDOB);
+            user = new User(stName,stID,stDOB);
             list.add(user);
         }
         return list;
@@ -220,13 +217,32 @@ public class ConnectDB {
             e.printStackTrace();
         }
     }
+    public static void insertProfileToMySql(String tableName, String columnName1, String columnName2, String columnName3)
+    {
+        try {
+            connectToMySql();
+            ps = connect.prepareStatement("INSERT INTO "+tableName+" ( " + columnName1 + "," + columnName2 + "," + columnName3 + " ) VALUES(?,?,?)");
+            ps.setString(1,"Abu CopyCat");
+            ps.setString(2,"8935");
+            ps.setString(3,"1970");
+            ps.executeUpdate();
+
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
 
     public static List<User> readFromMySql()throws IOException, SQLException, ClassNotFoundException{
         List<User> list = new ArrayList<>();
         User user = null;
         try{
             Connection conn = connectToMySql();
-            String query = "SELECT * FROM profile";
+            String query = "SELECT * FROM Students";
             // create the java statement
             Statement st = conn.createStatement();
             // execute the query, and get a java resultset
@@ -234,10 +250,11 @@ public class ConnectDB {
             // iterate through the java resultset
             while (rs.next())
             {
-                String name = rs.getString("name");
-                int id = rs.getInt("id");
+                String name = rs.getString("stName");
+                String id = rs.getString("stID");
+                String dob = rs.getString("stDOB");
                 //System.out.format("%s, %s\n", name, id);
-                user = new User(name,id);
+                user = new User(name,id, dob);
                 list.add(user);
 
             }
@@ -252,16 +269,16 @@ public class ConnectDB {
     public static void main(String[] args)throws IOException, SQLException, ClassNotFoundException {
 
 
-        insertProfileToMySql("profile","name", "id");
+        /*insertProfileToMySql("Students","stName", "stID", "stDOB");
         List<User> list = readFromMySql();
         for(User user:list){
-            System.out.println(user.getName()+ " " + user.getId());
-        }
+            System.out.println(user.getStName() + " " + user.getStID()+ " " + user.getStDOB());
+        } */
 
-        String message = insertToMongoDB(new User("Boby Developer", 8908));
+        insertToMongoDB(new User("Kiran Ismayati", "8494","07-1996"));
         List<User> user = readFromMongoDB();
         for(User person:user){
-            System.out.println(person.getName()+ " "+ person.getId());
+            System.out.println(person.getStName()+ " "+ person.getStID());
         }
 
     }
