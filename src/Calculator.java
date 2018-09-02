@@ -47,9 +47,14 @@ public class Calculator {
             return isPalindrome(str.substring(1, str.length() - 1));
         } else {
             return false;
-        }
+       
+    }
+
+   private class OnOFF{
+=======
 //hello world
    class OnOFF{
+
        int push;
 
     //known error
@@ -73,4 +78,4 @@ public class Calculator {
 
 
 
-}
+
