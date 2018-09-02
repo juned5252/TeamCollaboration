@@ -39,6 +39,7 @@ class SelectionSort
         ob.sort(arr);
         System.out.println("Sorted array");
         ob.printArray(arr);
+        System.out.println("test");
     }
 }
 /* This code is contributed by Rajat Mishra*/
