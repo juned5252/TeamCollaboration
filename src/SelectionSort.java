@@ -1,5 +1,5 @@
 // Java program for implementation of Selection Sort
-class SelectionSort
+class SelectionSort   //Some sexy code here guys!!
 {
     void sort(int arr[])
     {
