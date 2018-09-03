@@ -1,34 +1,36 @@
 public class Calculator {
-  ;
 
-    public static int add(int x, int y){
-        return x+y;
+
+    public static int add(int x, int y) {
+        return x + y;
     }
 
-    public static int sub(int x, int y){
-        return x-y;
+    public static int sub(int x, int y) {
+        return x - y;
     }
 
     public static int div(int x, int y) {
         return x / y;
     }
 
-    public static int multiple (int x, int y){ return x * y;}
-
-    public static double div(int x, double y){
-        return x/y;
+    public static int multiple(int x, int y) {
+        return x * y;
     }
 
-    public static double sqrt(int a){
+    public static double div(int x, double y) {
+        return x / y;
+    }
+
+    public static double sqrt(int a) {
         return Math.sqrt((double) a);
     }
 
-    public static double tripplert(int a){
+    public static double tripplert(int a) {
         return Math.sqrt(Math.sqrt(a));
     }
 
-    public static double sqr(int a,int b){
-        return Math.pow(a,b);
+    public static double sqr(int a, int b) {
+        return Math.pow(a, b);
     }
 
     public String reverse(String str) {
@@ -47,33 +49,34 @@ public class Calculator {
             return isPalindrome(str.substring(1, str.length() - 1));
         } else {
             return false;
-       
+
+        }
+
     }
+    private class OnOFF {
 
-   private class OnOFF{
-=======
-//hello world
-   class OnOFF{
 
-       int push;
+        int push;
 
-    //known error
-    //how do we handle it
-	//I have no idea.. we just keep grinding it out!!
+        //known error
+        //how do we handle it
+        //I have no idea.. we just keep grinding it out!!
 
-   int powerOn(int push){
-       this.push=push;
-        if(push==0);
-        System.out.println("Calculator is On and usable");
-        if(push!=0) System.out.println("Error message is played  :push right button");
-        return push;
+        int powerOn(int push) {
+            this.push = push;
+            if (push == 0) ;
+            System.out.println("Calculator is On and usable");
+            if (push != 0) System.out.println("Error message is played  :push right button");
+            return push;
         }
-        int powerOff(int push){
-            this.push=push;
-        if(push==1) System.out.println("Calculator is Off and displays nothing");
-        if(push!=1) System.out.println("Error message is played  :push right button");
-        return push;
+
+        int powerOff(int push) {
+            this.push = push;
+            if (push == 1) System.out.println("Calculator is Off and displays nothing");
+            if (push != 1) System.out.println("Error message is played  :push right button");
+            return push;
         }
+
     }
 }
 
