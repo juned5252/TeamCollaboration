@@ -61,6 +61,7 @@ public class Calculator { //I need a claculator, can you get me one plz..
         //known error
         //how do we handle it
         //I have no idea.. we just keep grinding it out!!
+	//Wait I got it.. oh no, it's gone
 
         int powerOn(int push) {
             this.push = push;
