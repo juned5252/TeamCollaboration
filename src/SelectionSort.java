@@ -1,5 +1,5 @@
 // Java program for implementation of Selection Sort
-class SelectionSort   //Some sexy code here guys!!
+class SelectionSort   //I will run this code, thank you
 {
     void sort(int arr[])
     {
@@ -22,7 +22,7 @@ class SelectionSort   //Some sexy code here guys!!
         }
     }
 
-    // Prints the array
+    // Prints the array                            
     void printArray(int arr[])
     {
         int n = arr.length;
