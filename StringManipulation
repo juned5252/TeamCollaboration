@@ -1,4 +1,4 @@
-package StringUsage;
+package StringUsage;         //Elaborate code
 public class UseString {
 
     public static void main(String[] args) {
