@@ -50,7 +50,7 @@ public class ConnectionDb {
                     +resultSet.getString(2)+"--"+
                     resultSet.getString("Batch"));
 
-            //this is the file
+            System.out.println("working file");
         }
 
 
