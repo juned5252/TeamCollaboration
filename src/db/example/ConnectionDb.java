@@ -46,9 +46,11 @@ public class ConnectionDb {
         System.out.println(connect.isClosed());
 
         while (resultSet.next()){
-            System.out.println( resultSet.getString("Id")+resultSet.getString(2));
+            System.out.println( resultSet.getString("Id")
+                    +resultSet.getString(2)+"--"+
+                    resultSet.getString("Batch"));
 
-            //i
+            //this is the file
         }
 
 
