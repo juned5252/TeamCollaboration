@@ -1,6 +1,6 @@
 package egypt;
 
-public class Pyramid {
+public class Pyramid {   (Interesting pyramid)
 
     public static void main(String[] args) {
         makePyramid(5);
